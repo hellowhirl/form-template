@@ -6,9 +6,11 @@ import PasswordInput from "./PasswordInput";
 
 function Form(props) {
   const { register, handleSubmit, errors } = useForm();
+  const [userData, setUserData] = useState({});
 
   const onSubmit = (data) => {
     console.log("submitted", data);
+    setUserData(data);
     setFormSubmitted(true);
   };
 
@@ -135,7 +137,20 @@ function Form(props) {
           </div>
         </form>
       )}
-      {formSubmitted && <div>Thank you for signing up!</div>}
+      {formSubmitted && (
+        <div className="thank-you">
+          <p style={{ fontWeight: "bold", fontSize: 24 }}>
+            Thank you for signing up!
+          </p>
+          <p>
+            We will send a confirmation email to{" "}
+            <span style={{ textDecoration: "underline", fontWeight: "bold" }}>
+              {userData.emailAddress}{" "}
+            </span>
+            shortly.
+          </p>
+        </div>
+      )}
     </div>
   );
 }

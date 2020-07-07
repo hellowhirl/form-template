@@ -83,6 +83,10 @@ h2 {
     border-radius: 0;
   }
 
+  .passwordSection input {
+    min-width: 50% !important;
+  }
+
   label {
     color: #181717;
     font-size: 15px;
@@ -122,10 +126,18 @@ h2 {
   align-items: flex-end;
   flex-direction: column;
 
+  @media only screen and (max-width: 479px) {
+    display: block;
+  }
+
   p {
     width: 60%;
     margin-bottom: 0px;
     font-size: 12px;
+
+    @media only screen and (max-width: 479px) {
+      width: 100%;
+    }
   }
 }
 
@@ -148,4 +160,12 @@ h2 {
     background-color: #7530e2;
     border-color: #6224c7;
   }
+}
+
+.thank-you {
+  display: flex;
+  flex-flow: column;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
 }

@@ -15,7 +15,7 @@ const PasswordInput = ({ name, label, reference, errors, onChange }) => {
 
   return (
     <React.Fragment>
-      <div className="form-group">
+      <div className="form-group passwordSection">
         <label className="input-label">{label}</label>
         <div className="input-group mb-3 input-wrapper">
           <input
