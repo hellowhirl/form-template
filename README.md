@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<img src="images/form_start.png.png" width="500">
+<img src="images/form_fillin.png" width="500">
+<img src="images/form_submit.png.png" width="500">
+
 ## Available Scripts
 
 In the project directory, you can run:
