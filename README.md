@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#### Form Start:
+
+<img src="images/form_start.png" width="500">
+
+#### Filling in form:
+
+<img src="images/form_fillin.png" width="500">
+
+#### After submit form - validation errors:
+
+<img src="images/form_submit.png" width="500">
+
 ## Available Scripts
 
 In the project directory, you can run:
