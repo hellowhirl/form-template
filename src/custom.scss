@@ -1,12 +1,14 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 .errorMessage {
+  margin-bottom: 0;
   color: red;
 }
 
 main {
-  height: 100vh;
+  height: 100%;
   padding-top: 20px;
+  padding-bottom: 100px;
   background: rgb(17, 0, 36);
   background: linear-gradient(
     135deg,
@@ -19,6 +21,11 @@ main {
 .top-header {
   padding-bottom: 40px;
   padding-left: 60px;
+
+  @media only screen and (max-width: 479px) {
+    padding-bottom: 20px;
+    padding-left: 30px;
+  }
 }
 
 h1 {
@@ -31,6 +38,9 @@ h1 {
 }
 
 .container {
+  @media only screen and (min-width: 575px) {
+    max-width: unset;
+  }
   @media only screen and (max-width: 600px) {
     padding: 0;
   }
@@ -47,7 +57,7 @@ h2 {
 }
 
 .form-wrapper {
-  width: 500px;
+  width: 560px;
   margin: 0 auto;
   padding: 20px 60px;
   border-radius: 0.25rem;
@@ -57,17 +67,53 @@ h2 {
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 60px;
     border-radius: 0;
   }
 
   label {
     color: #181717;
-    font-size: 14px;
-    &:after {
-      content: "*";
-      color: red;
-      margin-left: 3px;
-    }
+    font-size: 15px;
+  }
+}
+
+.input-label {
+  &:after {
+    content: "*";
+    color: red;
+    margin-left: 3px;
+  }
+}
+
+.form-group {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 479px) {
+    display: block;
+  }
+}
+
+.input-wrapper {
+  width: 60%;
+
+  @media only screen and (max-width: 479px) {
+    width: 100%;
+  }
+}
+
+.passwordAdvice {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  p {
+    width: 60%;
+    margin-bottom: 0px;
+    font-size: 12px;
   }
 }
 
@@ -77,11 +123,17 @@ h2 {
   text-align: center;
 
   button {
-    width: 120px;
+    width: 160px;
+    padding: 12px;
   }
 }
 
 .btn-primary {
   background-color: rgb(86, 29, 167);
   border-color: rgb(86, 29, 167);
+  &:hover {
+    // color: #fff;
+    background-color: #7530e2;
+    border-color: #6224c7;
+  }
 }
