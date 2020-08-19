@@ -1,4 +1,4 @@
-// Jest is a Test Runner and an Assertion Library
+// Jest is a Test Runner (test()) and an Assertion Library (expect().toBe())
 
 // Assertion: expect things to be a certain way in our code ("sky is blue")
 // Mocks: fake something (data, function), using fake tests for smaller chunks, substitute for API call, etc
@@ -9,6 +9,7 @@
 
 // Unit test
 // It only tests one thing (one specific unit)
+// for single units of code that don't depend on or interact with any other modules
 
 test("Trial test", () => {
   expect(true).toBeTruthy();
@@ -21,7 +22,15 @@ test("Trial test", () => {
 
 // Integratino test
 // More about coding working together
-// e.g. one functino goes off an runs another function runs another..
+// e.g. when we test a function that relies on another function
+// In React, testing a component that render another component
 
 // In React only renders a single level of component, not its children
 // this is why we should use primarily integration tests
+
+// If we want to write a unit test for a function that relies on another function then we use 'Mocks
+// creating a fake function that returns a value automatically without ever calling that other function
+
+// Other types of testing:
+// End-to-end: spin up your app and simulate user behavior. Kind of like a robeot performing a task in your app. Highest level testing, almost like a QA person
+// Static: catch typos and errors while writing code (TypeScript, Flow, ESLint), providing immediatte feedback while you write code
