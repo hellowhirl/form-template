@@ -1,8 +1,8 @@
 import * as React from "react";
 // import * as ReactDOM from "react-dom";
-import { App } from "./App";
+import App from "./App";
 // import { within, getQueriesForElement } from "@testing-library/dom";
-import { render } from "@testing-library/react";
+import { render, getAllByText } from "@testing-library/react";
 
 // this 'render' method is already provided in testing-library/react
 // const render = (component) => {
@@ -12,10 +12,10 @@ import { render } from "@testing-library/react";
 // };
 
 test("renders correct content", () => {
-  const { getByText } = render(<App />);
+  const { getByText, getByLabelText, getAllByText } = render(<App />);
 
   expect(getByText("Signup Form")).not.toBeNull();
   expect(getByText("SIGN UP")).not.toBeNull();
-  // expect(getByText("Show")).not.toBeNull();
-  expect(getByText("Password")).not.toBeNull();
+  getByLabelText("Password");
+  expect(getAllByText("Show")).not.toBeNull();
 });
