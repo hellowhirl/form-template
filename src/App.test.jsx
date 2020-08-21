@@ -2,7 +2,7 @@ import * as React from "react";
 // import * as ReactDOM from "react-dom";
 import App from "./App";
 // import { within, getQueriesForElement } from "@testing-library/dom";
-import { render, getAllByText } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 
 // this 'render' method is already provided in testing-library/react
 // const render = (component) => {
@@ -12,10 +12,22 @@ import { render, getAllByText } from "@testing-library/react";
 // };
 
 test("renders correct content", () => {
-  const { getByText, getByLabelText, getAllByText } = render(<App />);
+  const { getByText, getByLabelText } = render(<App />);
 
   expect(getByText("Signup Form")).not.toBeNull();
   expect(getByText("SIGN UP")).not.toBeNull();
   getByLabelText("Password");
-  expect(getAllByText("Show")).not.toBeNull();
+  // getAllByText("Show");
+});
+
+test("show changes to hide", () => {
+  const { getByRole } = render(<App />);
+  const showPassButton = getByRole("password-show");
+  const showConfButton = getByRole("confirmPassword-show");
+
+  fireEvent.click(showPassButton);
+  fireEvent.click(showConfButton);
+
+  getByRole("password-hide");
+  getByRole("confirmPassword-hide");
 });

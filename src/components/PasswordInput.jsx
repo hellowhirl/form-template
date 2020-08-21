@@ -32,6 +32,7 @@ const PasswordInput = ({ name, label, reference, errors, onChange }) => {
             <button
               className="btn btn-outline-secondary"
               onClick={(e) => toggleShow(e)}
+              role={!show ? `${name}-show` : `${name}-hide`}
             >
               {!show ? "Show" : "Hide"}
             </button>
