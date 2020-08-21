@@ -4,7 +4,7 @@ import Input from "./Input";
 import Checkbox from "./Checkbox";
 import PasswordInput from "./PasswordInput";
 
-function Form(props) {
+function Form() {
   const { register, handleSubmit, errors } = useForm();
   const [userData, setUserData] = useState({});
 
